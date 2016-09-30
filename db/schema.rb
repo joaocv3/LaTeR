@@ -14,13 +14,12 @@
 ActiveRecord::Schema.define(version: 20160930010156) do
 
   create_table "messages", force: :cascade do |t|
-    t.string   "content"
-    t.string   "receiver_email"
-    t.string   "receiver_name"
+    t.string   "content",        null: false
+    t.string   "receiver_email", null: false
+    t.string   "receiver_name",  null: false
     t.string   "sender_name"
-    t.datetime "send_at"
+    t.datetime "send_at",        null: false
     t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
   end
 
 end
