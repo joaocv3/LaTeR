@@ -1,2 +1,19 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<%= form_for @message, url: {action: "create"} do |f| %>
+	Message Content:
+	<%= f.text_field :content, required: true%>
+
+	Receiver Name:
+	<%= f.text_field :receiver_name, required: true %>
+	
+	Receiver Email:
+	<%= f.text_field :receiver_email, required: true%>
+	
+	Sender Name:
+	<%= f.text_field :sender_name, required: true %>
+	
+	Send at:
+	<%= f.text_field :send_at, required: true %>
+
+	<%= f.submit "Create" %>
+	
+<% end %>
