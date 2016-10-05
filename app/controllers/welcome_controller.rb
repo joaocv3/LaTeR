@@ -5,7 +5,6 @@ class WelcomeController < ApplicationController
   
   def create
     @message = Message.new(message_params)
-    @message.created_at = Time.now
     
     if @message.save
       flash[:alert] = 'Message will be sent at #{params[:send_at]}'
