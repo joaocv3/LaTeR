@@ -8,7 +8,8 @@ When I fill the receiver's e-mail "johndoe@gmail.com"
 And I fill the receiver's name "John Doe"
 And I fill the sender's name "Myself"
 And I enter a date and time "27/09/2016 21:00:00" to send the message 
-And I fill the message content with "Have you been to Japan yet?"
+And I fill the message content with "Have you been to Japan yet?" 
+And I send the form
 Then I should receive a confirmation message
 And "johndoe@gmail.com" should be the receiver's e-mail for message 1
 And "John Doe" should be the receiver's name for message 1

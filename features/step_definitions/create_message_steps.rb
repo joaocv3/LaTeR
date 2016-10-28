@@ -3,23 +3,27 @@ Given(/^I am at the homepage$/) do
 end
 
 When(/^I fill the receiver's e\-mail "([^"]*)"$/) do |arg1|
-  @message = Message.new(receiver_email: arg1)  
+  fill_in('message_receiver_email', :with => arg1) 
 end
 
 When(/^I fill the receiver's name "([^"]*)"$/) do |arg1|
-  @message.receiver_name = arg1
+  fill_in('message_receiver_name', :with => arg1) 
 end
 
 When(/^I fill the sender's name "([^"]*)"$/) do |arg1|
-  @message.sender_name = arg1
+  fill_in('message_sender_name', :with => arg1) 
 end
 
 When(/^I enter a date and time "([^"]*)" to send the message$/) do |arg1|
-    @message.send_at = arg1
+    fill_in('message_send_at', :with => arg1)
 end
 
 When(/^I fill the message content with "([^"]*)"$/) do |arg1|
-  @message.content = arg1
+  fill_in('message_content', :with => arg1)
+end
+
+When(/^I send the form$/) do
+  find('input[name="commit"]').click
 end
 
 Then(/^I should receive a confirmation message$/) do
