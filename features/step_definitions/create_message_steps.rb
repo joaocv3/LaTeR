@@ -1,5 +1,5 @@
 Given(/^I am at the homepage$/) do
-  puts "Welcome#index"      
+  visit('/') 
 end
 
 When(/^I fill the receiver's e\-mail "([^"]*)"$/) do |arg1|
