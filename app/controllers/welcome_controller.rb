@@ -9,7 +9,7 @@ class WelcomeController < ApplicationController
     if @message.save
       flash[:alert] = "Message will be sent at #{params[:send_at]}"
     else
-      flash[:alert] = "Error"
+      flash[:alert] = @message.errors.messages
     end
     redirect_to action: "index"  
   end
