@@ -13,4 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require jquery.maskedinput.min
+//= require custom
 //= require_tree .

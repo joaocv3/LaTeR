@@ -12,8 +12,11 @@
 	<%= f.text_field :sender_name, required: true %>
 	
 	Send at:
-	<%= f.text_field :send_at, required: true %>
+	<%= f.text_field :send_at, required: true, class: 'date'%>
 
 	<%= f.submit "Create" %>
-	
+
+    <div id="msg">
+        <%= flash[:alert] %>
+    </div>
 <% end %>
