@@ -15,7 +15,7 @@ When(/^I fill the sender's name "([^"]*)"$/) do |arg1|
 end
 
 When(/^I enter a date and time "([^"]*)" to send the message$/) do |arg1|
-    fill_in('message_send_at', :with => arg1)
+  fill_in('message_send_at', :with => arg1)
 end
 
 When(/^I fill the message content with "([^"]*)"$/) do |arg1|
@@ -27,9 +27,7 @@ When(/^I send the form$/) do
 end
 
 Then(/^I should receive a confirmation message$/) do
-  if @message.save
-    puts "Saved to DB"
-  end
+  find("div#msg", text: "Message will be sent on #{Message.last.send_at.to_s}")
 end
 
 Then(/^"([^"]*)" should be the receiver's e\-mail for message (\d+)$/) do |arg1, arg2|

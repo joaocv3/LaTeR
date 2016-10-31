@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20160930010156) do
     t.string   "receiver_email", null: false
     t.string   "receiver_name",  null: false
     t.string   "sender_name"
-    t.datetime "send_at",        null: false
+    t.date     "send_at",        null: false
     t.datetime "created_at",     null: false
   end
 

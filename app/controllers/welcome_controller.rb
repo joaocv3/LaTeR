@@ -7,7 +7,7 @@ class WelcomeController < ApplicationController
     @message = Message.new(message_params)
     
     if @message.save
-      flash[:alert] = "Message will be sent at #{params[:message]['send_at']}"
+      flash[:alert] = "Message will be sent on #{params[:message]['send_at']}"
     else
       flash[:alert] = @message.errors.messages
     end
