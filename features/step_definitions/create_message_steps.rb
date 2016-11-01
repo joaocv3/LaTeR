@@ -29,33 +29,3 @@ end
 Then(/^I should receive a confirmation message$/) do
   find("div#msg", text: "Message will be sent on #{Message.last.send_at.to_s}")
 end
-
-Then(/^"([^"]*)" should be the receiver's e\-mail for message (\d+)$/) do |arg1, arg2|
-  if Message.find(arg2).receiver_email == arg1
-    puts "Receiver email: #{arg1}"
-  end
-end
-
-Then(/^"([^"]*)" should be the receiver's name for message (\d+)$/) do |arg1, arg2|
-  if Message.find(arg2).receiver_name == arg1
-    puts "Receiver name: #{arg1}"
-  end
-end
-
-Then(/^"([^"]*)" should be the sender's name for message (\d+)$/) do |arg1, arg2|
-  if Message.find(arg2).sender_name == arg1
-    puts "Sender name: #{arg1}"
-  end
-end
-
-Then(/^"([^"]*)" should be the date and time to be sent for message (\d+)$/) do |arg1, arg2|
-  if Message.find(arg2).send_at == arg1
-    puts "Send at: #{arg1}"
-  end
-end
-
-Then(/^"([^"]*)" should be the content for message (\d+)$/) do |arg1, arg2|
-  if Message.find(arg2).content == arg1
-    puts "Message content: #{arg1}"
-  end
-end
