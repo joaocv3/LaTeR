@@ -1,11 +1,9 @@
 namespace :mail do
-  desc "TODO"
+  desc "Fetch all dates, send if date matches"
   task :fetch_dates => :environment do
-    puts "A"
-  end
-        
-  desc "Test Mailer"
-  task :send_email => :environment do
-    MessageMailer.scheduled_message("Heroku Test").deliver_now
+    messages = Message.where(send_at: Date.today)
+    messages.each do |message|
+      MessageMailer.scheduled_message(message).deliver_now
+    end    
   end
 end
