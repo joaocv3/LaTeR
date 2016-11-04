@@ -1,7 +1,7 @@
 class MessageMailer < ApplicationMailer
   layout "mailer"
-  def scheduled_message(messsage)
+  def scheduled_message(message)
     @message = message
-    mail(to: 'ltrmailer@gmail.com')
+    mail(to: message.receiver_email)
   end
 end
