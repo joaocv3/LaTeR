@@ -1,6 +1,8 @@
 # LaTeR
 > Long Term Reminder
 
+https://later1.herokuapp.com
+
 ## Showtime
 
 To setup the project for the first time, use:
