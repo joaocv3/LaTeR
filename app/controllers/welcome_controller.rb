@@ -7,7 +7,7 @@ class WelcomeController < ApplicationController
     @message = Message.new(message_params)
     
     if @message.save
-      flash[:alert] = "Message will be sent on #{params[:message]['send_at']}"
+      flash[:alert] = "Message will be sent on #{params[:message]['send_on']}"
     else
       flash[:alert] = @message.errors.messages
     end
@@ -17,6 +17,6 @@ class WelcomeController < ApplicationController
   private
   
   def message_params
-    params.require(:message).permit(:content, :receiver_email, :receiver_name, :sender_name, :send_at)
+    params.require(:message).permit(:content, :email, :name, :send_on)
   end
 end

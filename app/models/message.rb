@@ -1,6 +1,6 @@
 class Message < ActiveRecord::Base
-  validates :receiver_email,
-            :receiver_name,
-            :send_at,
+  validates :email,
+            :name,
+            :send_on,
             :content, presence: true
 end

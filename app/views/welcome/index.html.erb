@@ -2,17 +2,14 @@
 	Message Content:
 	<%= f.text_field :content, required: true%>
 
-	Receiver Name:
-	<%= f.text_field :receiver_name, required: true %>
+    Name:
+	<%= f.text_field :name, required: true %>
 	
-	Receiver Email:
-	<%= f.text_field :receiver_email, required: true%>
+	Email:
+	<%= f.text_field :email, required: true%>
 	
-	Sender Name:
-	<%= f.text_field :sender_name, required: true %>
-	
-	Send at:
-	<%= f.text_field :send_at, required: true, class: 'date'%>
+	Send on:
+	<%= f.text_field :send_on, required: true, class: 'date'%>
 
 	<%= f.submit "Create" %>
 
