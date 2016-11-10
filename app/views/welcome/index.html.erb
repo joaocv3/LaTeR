@@ -1,19 +1,36 @@
-<%= form_for @message, url: {action: "create"} do |f| %>
-	Message Content:
-	<%= f.text_field :content, required: true%>
-
-    Name:
-	<%= f.text_field :name, required: true %>
-	
-	Email:
-	<%= f.text_field :email, required: true%>
-	
-	Send on:
-	<%= f.text_field :send_on, required: true, class: 'date'%>
-
-	<%= f.submit "Create" %>
-
-    <div id="msg">
-        <%= flash[:alert] %>
+<div class="content">
+    <div class="row">
+        <div class="col-sm-4">
+            <%= form_for @message, url: {action: "create"} do |f| %>
+                
+                <div class="form-group">
+                    <label>Name:</label>
+                    <%= f.text_field :name, required: true, class: "form-control" %>
+                </div>
+                
+                <div class="form-group">
+                    <label>E-mail</label>
+                    <%= f.text_field :email, required: true, class: "form-control" %>
+                </div>
+                
+                <div class="form-group">
+                    <label>Send On:</label>
+                    <%= f.text_field :send_on, required: true, class: "form-control date", placeholder:"Tomorrow or later" %>
+                </div>
+                
+                <div class="form-group">
+                    <label>Message Content:</label>
+                        <%= f.text_area :content, required: true, class: "form-control", placeholder:"Your plan goes here" %>
+                </div>
+                
+                <%= f.submit "Create", class: "btn btn-primary" %>
+                
+                <div id="msg">
+                    <%= flash[:alert] %>
+                </div>
+            
+            <% end %>
+        </div>
+        <div class="col-sm-8">EXAMPLES</div>
     </div>
-<% end %>
+</div>
