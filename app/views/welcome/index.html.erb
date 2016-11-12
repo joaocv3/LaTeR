@@ -31,6 +31,19 @@
             
             <% end %>
         </div>
-        <div class="col-sm-8">EXAMPLES</div>
+        <div class="col-sm-8">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <% 4.times do %>
+                <div class="hovereffect">
+                    <%= image_tag("placeholder.jpg", class: "img-responsive") %>
+                    <div class="overlay">
+                       <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tortor augue, rhoncus ut justo at, interdum volutpat velit.</h2>
+                    </div>
+                </div>
+                <div class="col-xs-12" style="height:10px;"></div>
+                <% end %>    
+            </div>
+        
+        </div>
     </div>
 </div>
