@@ -40,7 +40,7 @@ jQuery(function($) {
 
     $('#new_message').submit(function() {
         var datevalue = $('.date').val();
-        return checkDate(datevalue)           
+        return checkDate(datevalue);
      });
     
     $(".date").keyup(function(){
@@ -49,9 +49,32 @@ jQuery(function($) {
 
         //only if the date is full like this: 'xx/xx/xxxx' continue
         if(datevalue.length == 10) {  
-            checkDate(datevalue);
+			checkDate(datevalue);
         } else {
             clean();
         }
     });
 });
+
+moment.locale('default', {
+     longDateFormat : {
+        L : "DD/MM/YYYY"
+    }
+});
+
+function oneMonth(){
+	later =  moment().add(1, 'month').calendar();
+    document.getElementById("message_send_on").value = later;
+}
+function threeMonths(){
+	later =  moment().add(3, 'months').calendar();
+	document.getElementById("message_send_on").value = later;
+}
+function sixMonths(){
+	later =  moment().add(6, 'months').calendar();
+	document.getElementById("message_send_on").value = later;
+}
+function oneYear(){
+	later =  moment().add(1, 'year').calendar();  
+	document.getElementById("message_send_on").value = later;
+}
