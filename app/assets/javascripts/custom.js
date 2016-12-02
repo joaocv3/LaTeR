@@ -89,3 +89,6 @@ function oneYear(){
 	later =  moment().add(1, 'year').calendar();  
 	document.getElementById("message_send_on").value = later;
 }
+function exampleTrip(){
+	document.getElementById("message_content").value = "Have you already visited ... ?";
+}
