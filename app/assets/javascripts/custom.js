@@ -92,3 +92,6 @@ function oneYear(){
 function exampleTrip(){
 	document.getElementById("message_content").value = "Have you already visited ... ?";
 }
+function exampleStudy(){
+	document.getElementById("message_content").value = "Study...";
+}
