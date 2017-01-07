@@ -95,3 +95,6 @@ function exampleTrip(){
 function exampleStudy(){
 	document.getElementById("message_content").value = "Study...";
 }
+function exampleWork(){
+	document.getElementById("message_content").value = "Start working on...";
+}
