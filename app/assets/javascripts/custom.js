@@ -93,8 +93,11 @@ function exampleTrip(){
 	document.getElementById("message_content").value = "Have you already visited ... ?";
 }
 function exampleStudy(){
-	document.getElementById("message_content").value = "Study...";
+	document.getElementById("message_content").value = "Study...?";
 }
 function exampleWork(){
-	document.getElementById("message_content").value = "Start working on...";
+	document.getElementById("message_content").value = "Start working on...?";
+}
+function examplePersonal(){
+	document.getElementById("message_content").value = "Have you started learning...?";
 }
