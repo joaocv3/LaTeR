@@ -73,21 +73,9 @@ moment.locale('default', {
     }
 });
 
-function oneMonth(){
-	later =  moment().add(1, 'month').calendar();
+function addTime(amount, period){
+	later =  moment().add(amount, period).calendar();
     document.getElementById("message_send_on").value = later;
-}
-function threeMonths(){
-	later =  moment().add(3, 'months').calendar();
-	document.getElementById("message_send_on").value = later;
-}
-function sixMonths(){
-	later =  moment().add(6, 'months').calendar();
-	document.getElementById("message_send_on").value = later;
-}
-function oneYear(){
-	later =  moment().add(1, 'year').calendar();  
-	document.getElementById("message_send_on").value = later;
 }
 function exampleTrip(){
 	document.getElementById("message_content").value = "Have you already visited ... ?";
