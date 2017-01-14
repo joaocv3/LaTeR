@@ -1,34 +1,26 @@
-function checkDate(idate){
-    resultDiv = document.getElementById("msg"),
-    // Verifies valid dates    
-    dateReg = /(0[1-9]|[12][0-9]|3[01])[\/](0[1-9]|1[012])[\/]200[1-9]|20[1-9][0-9]/;
-    var done = false;
+function validateFutureDate(){
+	var resultDiv = document.getElementById("msg");
 
-    if(dateReg.test(idate)){
-        if(isFutureDate(idate)){
-            //clean the message
-            clean();
-            //finally, allow the user to pass the submit
-            done = true;
-        } else {
-            resultDiv.innerHTML = "The date must be tomorrow or later!";
-            resultDiv.style.color = "red";
-        }
-    } else {
-        resultDiv.innerHTML = "Invalid date!";
-        resultDiv.style.color = "red";
-    }
-    
-    return done;
-}
+	clean();
 
-function isFutureDate(idate){
-    var today = new Date().getTime(),
-    idate = idate.split("/");
+	today = moment().startOf('day');
+	form_date = document.getElementById('send_on').value;
+	future = moment(form_date, "DD/MM/YYYY");
 
-    idate = new Date(idate[2], idate[1] - 1, idate[0]).getTime();
-    return (today - idate) < 0 ? true : false;
-}
+	res = future.diff(today, 'days');
+
+	if (isNaN(res)){
+		resultDiv.innerHTML += 'Invalid date';
+		return false;
+	}else{
+		if (res<=0){
+			resultDiv.innerHTML += 'Date must be tomorrow or LaTeR';
+			return false;
+     	}else{
+			return true;
+		}
+	}
+};
 
 function checkEmail(email){
     if( /^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*$/.test( email )	) {  
@@ -47,31 +39,8 @@ function clean() {
 jQuery(function($) {
     //mask the input
     $(".date").mask("99/99/9999");
-
-    $('#new_message').submit(function() {
-        var datevalue = $('.date').val();
-        var email = $('.email').val();
-        return checkDate(datevalue) && checkEmail(email);
-     });
-    
-    $(".date").keyup(function(){
-        //get the date
-        var datevalue = $(this).val();
-
-        //only if the date is full like this: 'xx/xx/xxxx' continue
-        if(datevalue.length == 10) {  
-			checkDate(datevalue);
-        } else {
-            clean();
-        }
-    });
 });
 
-moment.locale('default', {
-     longDateFormat : {
-        L : "DD/MM/YYYY"
-    }
-});
 
 function addTime(amount, period){
 	later =  moment().add(amount, period).calendar();

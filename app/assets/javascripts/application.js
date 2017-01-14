@@ -16,5 +16,6 @@
 //= require twitter/bootstrap
 //= require turbolinks
 //= require jquery.maskedinput.min
+//= require moment
 //= require custom
 //= require_tree .

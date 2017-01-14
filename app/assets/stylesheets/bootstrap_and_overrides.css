@@ -9,3 +9,11 @@
 body{
     padding-top: 5%;
 }
+
+#msg{
+	color: red;
+}
+
+#msg_success{
+	color: green;
+}
