@@ -1,10 +1,14 @@
+function validator(){
+	return (validateFutureDate() && checkEmail());
+}
+
 function validateFutureDate(){
 	var resultDiv = document.getElementById("msg");
 
 	clean();
 
 	today = moment().startOf('day');
-	form_date = document.getElementById('send_on').value;
+	form_date = document.getElementById('message_send_on').value;
 	future = moment(form_date, "DD/MM/YYYY");
 
 	res = future.diff(today, 'days');
@@ -22,14 +26,17 @@ function validateFutureDate(){
 	}
 };
 
-function checkEmail(email){
-    if( /^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*$/.test( email )	) {  
+function checkEmail(){
+	email = document.getElementById('message_email').value;
+	var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+    if (re.test(email)) {
 	    clean();
 	    return true;
-	} else {
+	}else{
     	document.getElementById("msg").innerHTML = "Invalid Email";
     	return false;
-    }	
+    }
 }
 
 function clean() {
@@ -41,6 +48,11 @@ jQuery(function($) {
     $(".date").mask("99/99/9999");
 });
 
+moment.locale('default', {
+     longDateFormat : {
+        L : "DD/MM/YYYY"
+    }
+});
 
 function addTime(amount, period){
 	later =  moment().add(amount, period).calendar();
