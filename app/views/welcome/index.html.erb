@@ -63,25 +63,7 @@
         </div>
         <div class="col-sm-8">
             <div class="col-lg-12 col-md-12 col-xs-12 col-xs-12">
-                <div onclick="exampleTrip()" class="hovereffect">
-                    <%= image_tag("example1.jpg", class: "img-responsive img-rounded") %>
-                    <div class="overlay">
-                       <h2>You can remind yourself of that trip you are always talking about, but have never actually done it. "Have you been to Japan yet?"</h2>
-                    </div>
-                </div>
-
-                <div class="col-xs-12" style="height:10px;"></div>
-
-                <div onclick="exampleStudy()" class="hovereffect">
-                    <%= image_tag("example2.jpg", class: "img-responsive img-rounded") %>
-                    <div class="overlay">
-                       <h2>You can remind yourself of that subject you want to learn about but don't have time now. "Start the 'Learn how to learn' course on Coursera"</h2>
-                    </div>
-                </div>
-
-                <div class="col-xs-12" style="height:10px;"></div>
-                
-                <div onclick="exampleWork()" class="hovereffect">
+            	<div onclick="fillExample('Start the LaTeR project.')" class="hovereffect">
                     <%= image_tag("example3.jpg", class: "img-responsive img-rounded") %>
                     <div class="overlay">
                        <h2>Don't have time to work on that project now? </h2>
@@ -89,12 +71,29 @@
                 </div>
 
                 <div class="col-xs-12" style="height:10px;"></div>
+                
+                <div onclick="fillExample('Go to Japan.')" class="hovereffect">
+                    <%= image_tag("example1.jpg", class: "img-responsive img-rounded") %>
+                    <div class="overlay">
+                       <h2>No money to travel now?</h2>
+                    </div>
+                </div>
 
+                <div class="col-xs-12" style="height:10px;"></div>
+
+                <div onclick="fillExample('Start the Learn How to Learn course on Coursera.')" class="hovereffect">
+                    <%= image_tag("example2.jpg", class: "img-responsive img-rounded") %>
+                    <div class="overlay">
+                       <h2>That subject you want to learn about but don't have time now. </h2>
+                    </div>
+                </div>
+
+                <div class="col-xs-12" style="height:10px;"></div>                
 				
-                <div onclick="examplePersonal()" class="hovereffect">
+                <div onclick="fillExample('Learn how to play guitar')" class="hovereffect">
                     <%= image_tag("example4.jpg", class: "img-responsive img-rounded") %>
                     <div class="overlay">
-                       <h2>Learn new skills? </h2>
+                       <h2> Wish you could play guitar?</h2>
                     </div>
                 </div>              
 

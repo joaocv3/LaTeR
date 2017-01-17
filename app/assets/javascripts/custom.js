@@ -58,15 +58,6 @@ function addTime(amount, period){
 	later =  moment().add(amount, period).calendar();
     document.getElementById("message_send_on").value = later;
 }
-function exampleTrip(){
-	document.getElementById("message_content").value = "Have you already visited ... ?";
-}
-function exampleStudy(){
-	document.getElementById("message_content").value = "Study...?";
-}
-function exampleWork(){
-	document.getElementById("message_content").value = "Start working on...?";
-}
-function examplePersonal(){
-	document.getElementById("message_content").value = "Have you started learning...?";
+function fillExample(example){
+	document.getElementById("message_content").value = example;
 }
