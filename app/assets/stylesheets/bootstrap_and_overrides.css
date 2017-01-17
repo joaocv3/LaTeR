@@ -17,3 +17,20 @@ body{
 #msg_success{
 	color: green;
 }
+
+
+.btn-primary{
+	background-color: #10806D;
+	border-color: #136053;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+    background: #10806D;
+	border-color: #117c6a;
+}
+ 
+.btn-primary:active, .btn-primary.active {
+    background: #10806D;
+    box-shadow: none;
+}
+
