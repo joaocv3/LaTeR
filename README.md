@@ -1,7 +1,7 @@
 # LaTeR
 > Long Term Reminder
 
-https://later1.herokuapp.com
+http://longtermreminder.com
 
 ## Showtime
 
