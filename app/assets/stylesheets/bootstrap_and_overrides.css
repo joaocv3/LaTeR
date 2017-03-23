@@ -37,4 +37,11 @@ body{
 h1{
 	font-family: 'Baloo Bhaina', cursive;
 	color: #3A7966;
+	text-align: center;
+}
+
+h3{
+	font-family: 'Roboto', sans-serif;
+	color: #3A7966;
+	text-align: center;
 }

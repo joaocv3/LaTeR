@@ -5,7 +5,7 @@
         		<center>
 					<%= image_tag("logo.jpg", class: "img-responsive img-rounded") %>
 					<h1>A Long Term Reminder</h1>
-        		</center>
+				</center>
         	</div>
             
             <%= form_for @message, url: {action: "create"}, html: { onsubmit:"return validator();" }  do |f| %>
@@ -89,15 +89,18 @@
                     </div>
                 </div>
 
-                <div class="col-xs-12" style="height:10px;"></div>                
+                <div class="col-xs-12" style="height:10px;"></div>
 				
                 <div onclick="fillExample('Learn how to play guitar')" class="hovereffect">
                     <%= image_tag("example4.jpg", class: "img-responsive img-rounded") %>
                     <div class="overlay">
                        <h2> Wish you could play guitar?</h2>
                     </div>
-                </div>              
+                </div>
 
+                <div class="col-xs-12" style="height:30px;"></div>
+
+				<h3>Create powerful reminders and don't forget to do important stuff that you don't have money/time/will to do now</h3>
             </div>
         </div>
     </div>
